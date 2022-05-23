@@ -7,7 +7,7 @@ const Post = (props) => {
             <img src='https://papik.pro/uploads/posts/2021-11/thumbs/1636391985_27-papik-pro-p-avokado-risunok-milii-27.jpg'></img>
             { props.message }
             <div>
-                <span>like</span> { props.likescount}
+                <span>like</span> { props.likesCount }
             </div>
         </div>
     )
