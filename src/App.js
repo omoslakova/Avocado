@@ -4,14 +4,12 @@ import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar.jsx';
 import Profile from './Components/Profile/Profile.jsx';
 import Dialogs from './Components/Dialogs/Dialogs.jsx';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {updateNewPostText} from "./Redux/State";
+import { Route, Routes} from "react-router-dom";
 
 
 const App = (props) => {
 
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
@@ -23,13 +21,11 @@ const App = (props) => {
                         <Route path="/profile"
                                element={<Profile posts={props.posts}
                                                  newPostText={props.newPostText}
-                                                 addPost={props.addPost}
-                                                 updateNewText={props.updateNewPostText}/>} />
+                                                 dispatch={props.dispatch}/>} />
 
                     </Routes>
                 </div>
-            </div>
-        </BrowserRouter>)
+            </div>)
 }
 
 export default App;
