@@ -6,20 +6,13 @@ import './index.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
 let rerenderEntireTree = (state) => {
-    const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
-        <React.StrictMode>
             <BrowserRouter>
-            <App
-                posts={store.getState().profilePage.posts}
-                dialogs={store.getState().dialogsPage.dialogs}
-                messages={store.getState().dialogsPage.messages}
-                newPostText={store.getState().profilePage.newPostText}
-                dispatch={store.dispatch.bind(store)}
-            />
-                </BrowserRouter>
-        </React.StrictMode>);
+            <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+            </BrowserRouter>
+            )
 }
 
 rerenderEntireTree(store.getState());
