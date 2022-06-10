@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar/Navbar.jsx';
 import Profile from './Components/Profile/Profile.jsx';
 import Dialogs from './Components/Dialogs/Dialogs.jsx';
 import { Route, Routes } from "react-router-dom";
+import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
 
 const App = (props) => {
@@ -17,10 +18,9 @@ const App = (props) => {
 
                 <Routes>
                         <Route path="/dialogs/*"
-                               element={<Dialogs store={props.store}/>} />
+                               element={<DialogsContainer store={props.store}/>} />
                         <Route path="/profile"
-                               element={<Profile profilePage={props.state.profilePage}
-                               dispatch={props.dispatch}/>} />
+                               element={<Profile store={props.store}/>} />
                 </Routes>
 
                 </div>
