@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar.jsx';
-import { Route, Routes } from "react-router-dom";
+import { Route} from "react-router-dom";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer.jsx";
 import UsersContainer from "./Components/Users/UsersContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
