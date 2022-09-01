@@ -1,16 +1,19 @@
 .nav {
     grid-area: n;
     background-color: white;
-    padding: 20px;
+    padding: 50px 20px 0 70px;
 }
+
 .item {
     color: white;
     text-decoration: none;
     color: forestgreen;
-    font-size: 15px;
-    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 1.5;
 }
 
-a.active{
+a.active {
     color: gold;
 }

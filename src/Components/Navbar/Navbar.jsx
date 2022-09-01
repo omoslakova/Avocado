@@ -19,9 +19,6 @@ const Navbar = () => {
             <a>News</a>
         </div>
         <div className={s.item}>
-            <a>Music</a>
-        </div>
-        <div className={s.item}>
             <a>Settings</a>
         </div>
     </nav>)

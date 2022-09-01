@@ -1,13 +1,18 @@
 .header {
     grid-area: h;
-    background-color: darkseagreen;
+    background-color: palegreen;
+
 }
 .header img {
-    width: 20px;
+    width: 70px;
 }
 .loginBlock {
     float: right;
-
+    padding: 20px 200px 0 0;
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: black;
 }
 .loginBlock a {
     color: white;
