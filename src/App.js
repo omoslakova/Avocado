@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar.jsx';
-import {Route} from "react-router-dom";
+import {Route, HashRouter} from "react-router-dom";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer.jsx";
 import UsersContainer from "./Components/Users/UsersContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
@@ -11,7 +11,9 @@ import {withRouter} from "react-router";
 import {compose} from "redux";
 import Preloader from "./Components/common/Preloader/Preloader";
 import {initializeApp} from "./Redux/app-reducer";
-import {connect} from "react-redux";
+import {Provider, connect} from "react-redux";
+import store from "./Redux/redux-store";
+import {withSuspense} from "./HOC/withSuspence";
 
 
 class App extends React.Component {
@@ -29,11 +31,11 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
+                    <Route path='/dialogs'
+                           render={withSuspense(DialogsContainer)}/>
+                    <Route path='/profile/:userId?'
+                           render={withSuspense(ProfileContainer)} />
 
-                    <Route path="/dialogs"
-                           render={() => <DialogsContainer/>}/>
-                    <Route path="/profile/:userId?"
-                           render={() => <ProfileContainer/>}/>
                     <Route path="/users"
                            render={() => <UsersContainer/>}/>
                     <Route path="/login"
@@ -46,8 +48,16 @@ class App extends React.Component {
 const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
-
-
-export default compose(
+let AppContainer = compose(
     withRouter,
     connect(mapStateToProps, {initializeApp}))(App);
+
+const AvocadoJSApp = (props) => {
+    return <HashRouter >
+        <Provider store={store}>
+            <AppContainer />
+        </Provider>
+    </HashRouter>
+}
+
+export default AvocadoJSApp;
