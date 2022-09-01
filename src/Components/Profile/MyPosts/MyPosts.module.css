@@ -4,3 +4,15 @@
 .posts {
     margin-top: 15px;
 }
+
+.btnAddPost {
+    color: #42940F;
+    border: 2px solid #42940F;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+}
+.btnAddPost:hover {
+    background: #42940F;
+    color: #FFFFFF;
+}

@@ -18,13 +18,9 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto }) => {
 
     return (
         <div>
-            {/*<div>
-                <img
-                    src='https://blog.onlime.ru/wp-content/uploads/2019/12/shutterstock_529670182-945x630.jpg'></img>
-            </div>*/}
             <div className={s.descriptionBlock}>
             <img src={profile.photos.large || userPhoto} className={s.mainPhoto} />
-            { isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
+            { isOwner && <input className={s.updatePhotoBlock} type={"file"} onChange={onMainPhotoSelected} />}
             <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
         </div>
 

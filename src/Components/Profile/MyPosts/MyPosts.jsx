@@ -14,7 +14,7 @@ let AddNewPostForm = (props) => {
                    validate={[required, maxLength10]} />
         </div>
         <div>
-            <button>Add post</button>
+            <button className={s.btnAddPost}>Add post</button>
         </div>
     </form>;
 }
